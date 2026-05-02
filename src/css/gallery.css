@@ -1,0 +1,80 @@
+/* === Gallery === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery__item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: fade-in 0.4s ease both;
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(232, 255, 58, 0.3);
+}
+
+.gallery__link {
+  display: block;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.04);
+}
+
+.gallery__info {
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 8px;
+}
+
+.gallery__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gallery__stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.gallery__stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* SimpleLightbox overrides */
+.sl-overlay {
+  background: rgba(13, 13, 15, 0.92) !important;
+}
+
+.sl-wrapper .sl-close {
+  color: var(--accent) !important;
+  font-size: 28px !important;
+}
+
+.sl-wrapper .sl-navigation button {
+  color: var(--accent) !important;
+}

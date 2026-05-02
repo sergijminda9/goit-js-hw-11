@@ -1,0 +1,71 @@
+/* === Search Form === */
+.search-section {
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form__label {
+  flex: 1;
+}
+
+.form__input {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form__input::placeholder {
+  color: var(--text-muted);
+}
+
+.form__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.form__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #0d0d0f;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    opacity 0.15s,
+    box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.form__btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 255, 58, 0.25);
+}
+
+.form__btn:active {
+  transform: translateY(0);
+}

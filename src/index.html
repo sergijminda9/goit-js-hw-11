@@ -1,19 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Image Search</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <load src="./partials/header.html" />
 
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <!-- Search form -->
+      <section class="search-section">
+        <form class="form" autocomplete="off">
+          <label class="form__label">
+            <input
+              type="text"
+              name="search-text"
+              class="form__input"
+              placeholder="Search images..."
+              required
+            />
+          </label>
+          <button type="submit" class="form__btn">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            Search
+          </button>
+        </form>
+      </section>
+
+      <!-- Loader -->
+      <div class="loader-wrap" id="loader">
+        <div class="loader">
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+        </div>
+        <span class="loader__text">Searching...</span>
+      </div>
+
+      <!-- Gallery -->
+      <section class="gallery-section">
+        <ul class="gallery" id="gallery"></ul>
+      </section>
     </main>
 
     <load src="./partials/footer.html" />
