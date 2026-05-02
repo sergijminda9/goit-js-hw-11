@@ -32,8 +32,6 @@ function onFormSubmit(event) {
 
   getImagesByQuery(query)
     .then(data => {
-      hideLoader();
-
       if (data.hits.length === 0) {
         iziToast.error({
           title: 'Not found',
@@ -55,7 +53,6 @@ function onFormSubmit(event) {
       });
     })
     .catch(error => {
-      hideLoader();
       console.error(error);
       iziToast.error({
         title: 'Request error',
@@ -63,5 +60,8 @@ function onFormSubmit(event) {
         position: 'topRight',
         timeout: 5000,
       });
+    })
+    .finally(() => {
+      hideLoader();
     });
 }
